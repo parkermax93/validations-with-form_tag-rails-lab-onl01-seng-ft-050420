@@ -22,7 +22,13 @@ class AuthorsController < ApplicationController
   end
   
   def update 
-    
+    @author = Author.find(params[:id])
+     
+     if @Author.update(author_params)
+        redirect_to author_path(@author)
+      else 
+        render :edit 
+      end
   end
 
   private
