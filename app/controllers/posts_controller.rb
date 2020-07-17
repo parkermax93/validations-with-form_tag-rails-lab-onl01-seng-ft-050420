@@ -16,6 +16,14 @@ class PostsController < ApplicationController
         render :edit 
       end
   end
+  
+  def new 
+    
+  end
+  
+  def create 
+    
+  end
 
   private
 
