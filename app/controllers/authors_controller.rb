@@ -14,7 +14,15 @@ class AuthorsController < ApplicationController
          redirect_to author_path(@author)
         else
           render :new 
-        end
+      end
+  end
+  
+  def edit 
+    
+  end
+  
+  def update 
+    
   end
 
   private
