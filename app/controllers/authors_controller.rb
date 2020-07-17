@@ -1,31 +1,31 @@
-class PostsController < ApplicationController
+class AuthorsController < ApplicationController
   def show
-    @post = Post.find(params[:id])
+    @author = Author.find(params[:id])
   end
 
   def new
-    @post = Post.new
+    @author = Author.new
   end
 
   def create
-    @post = Post.new(post_params)
+    @author = Author.new(author_params)
 
-    if @post.save
-      redirect_to post_path(@post)
+    if @author.save
+      redirect_to author_path(@author)
     else
       render :new
     end
   end
 
   def edit
-    @post = Post.find(params[:id])
+    @author = Author.find(params[:id])
   end
 
   def update
-    @post = Post.find(params[:id])
+    @author = Author.find(params[:id])
 
-    if @post.update(post_params)
-      redirect_to post_path(@post)
+    if @author.update(author_params)
+      redirect_to author_path(@author)
     else
       render :edit
     end
@@ -33,7 +33,7 @@ class PostsController < ApplicationController
 
   private
 
-  def post_params
-    params.permit(:title, :category, :content)
+  def author_params
+    params.permit(:name, :email, :phone_number)
   end
 end
